@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- Game WebView -->
+    <WebView
+        android:id="@+id/gameWebView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:overScrollMode="never" />
+
+    <!-- Loading screen -->
+    <FrameLayout
+        android:id="@+id/loadingContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_background"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <!-- Logo or game icon -->
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Game title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LoveMoney"
+                android:textColor="#FFFFFF"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Loading prompt -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Loading Game..."
+                android:textColor="#CCCCCC"
+                android:textSize="16sp"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Loading progress bar -->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="200dp"
+                android:layout_height="4dp"
+                android:progressDrawable="@drawable/progress_drawable"
+                android:indeterminate="false"
+                android:max="100"
+                android:progress="0"
+                android:layout_marginBottom="32dp" />
+
+            <!-- Tutorial/Help button -->
+            <Button
+                android:id="@+id/tutorialButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tutorial &amp; Help"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/tutorial_button_background"
+                android:paddingHorizontal="24dp"
+                android:paddingVertical="12dp"
+                android:alpha="0.8" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- Floating Help Button (minimizable during gameplay) -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingHelpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_help"
+        app:backgroundTint="#80FFFFFF"
+        app:tint="#FFFFFF"
+        android:visibility="gone" />
+
+</FrameLayout>
