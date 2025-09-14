@@ -18,9 +18,9 @@ release/
 # Gradle files
 .gradle/
 build/
-gradle/wrapper/gradle-wrapper.jar
-gradlew
-gradlew.bat
+# gradle/wrapper/gradle-wrapper.jar  # Should be tracked for reproducible builds
+# gradlew                            # Should be tracked
+# gradlew.bat                        # Should be tracked
 
 # Local configuration file (sdk path, etc)
 local.properties
@@ -52,6 +52,9 @@ captures/
 # Keystore files
 *.jks
 *.keystore
+# Note: For demo/educational purposes, we're including the keystore
+# In production, NEVER commit keystores to version control!
+!lovemoney-release.keystore  # Exception for demo purposes only
 
 # External native build folder generated in Android Studio 2.2 and later
 .externalNativeBuild
